@@ -1,2 +1,2 @@
-# tpp
+# tppc
 T++ Compiler in C
