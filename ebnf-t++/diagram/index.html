@@ -1,0 +1,868 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta name="generator" content="Railroad Diagram Generator 1.46.1459"><style type="text/css" xml:space="preserve">
+    ::-moz-selection
+    {
+      color: #FFFCF0;
+      background: #0F0C00;
+    }
+    ::selection
+    {
+      color: #FFFCF0;
+      background: #0F0C00;
+    }      
+    .ebnf a
+    {
+      text-decoration: none;
+    }
+    .ebnf a:hover
+    {
+      color: #050400;
+      text-decoration: underline;
+    }    
+    .signature
+    {
+      color: #806600;
+      font-size: 11px;
+      text-align: right;
+    }
+    body
+    {
+      font: normal 12px Verdana, sans-serif;
+      color: #0F0C00;
+      background: #FFFCF0;
+    }
+    a:link, a:visited
+    {
+      color: #0F0C00;
+    }
+    a:link.signature, a:visited.signature
+    {
+      color: #806600;
+    }
+    a.button, #tabs li a
+    {
+      padding: 0.25em 0.5em;
+      border: 1px solid #806600;
+      background: #F1E8C6;
+      color: #806600;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.button:hover, #tabs li a:hover
+    {
+      color: #050400;
+      background: #FFF6D1;
+      border-color: #050400;       
+    }     
+    #tabs
+    {
+      padding: 3px 10px;
+      margin-left: 0;
+      margin-top: 58px;
+      border-bottom: 1px solid #0F0C00;
+    }  
+    #tabs li
+    {
+      list-style: none;
+      margin-left: 5px;
+      display: inline;
+    }
+    #tabs li a
+    {     
+      border-bottom: 1px solid #0F0C00;
+    }
+    #tabs li a.active
+    {
+      color: #0F0C00;
+      background: #FFFCF0;
+      border-color: #0F0C00;
+      border-bottom: 1px solid #FFFCF0;
+      outline: none;
+    }
+    #divs div
+    {
+      display: none;
+      overflow:auto;
+    }
+    #divs div.active
+    {
+      display: block;
+    }
+    #text
+    {
+      border-color: #806600;
+      background: #FFFEFA;
+      color: #050400;
+    }
+    .small
+    {
+      vertical-align: top;
+      text-align: right;
+      font-size: 9px;
+      font-weight: normal;
+      line-height: 120%;
+    }
+    td.small
+    {
+      padding-top: 0px;
+    }
+    .hidden
+    {
+      visibility: hidden;
+    }
+    td:hover .hidden 
+    {
+      visibility: visible;
+    }
+    div.download
+    {
+      display: none;
+      background: #FFFCF0;
+      position: absolute;
+      right: 34px;
+      top: 94px;
+      padding: 10px;
+      border: 1px dotted #0F0C00;
+    }
+    #divs div.ebnf, div.ebnf
+    {
+      display: block;
+      padding-left: 16px;
+      padding-top: 2px; 
+      padding-bottom: 2px; 
+      background: #FFF6D1;
+    }
+    tr.option-line td:first-child
+    {
+      text-align: right
+    }
+    tr.option-text td
+    {
+      padding-bottom: 10px
+    }
+    table.palette
+    {
+      border-top: 1px solid #050400;
+      border-right: 1px solid #050400;
+      margin-bottom: 4px
+    }
+    td.palette
+    {
+      border-bottom: 1px solid #050400;
+      border-left: 1px solid #050400;
+    }
+    a.palette
+    {
+      padding: 2px 3px 2px 10px;
+      text-decoration: none;
+    }
+    .palette
+    {
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -o-user-select: none;
+      -ms-user-select: none;
+    }
+  </style></head>
+   <body>
+      
+      <p style="font-size: 14px; font-weight:bold"><a name="programa">programa:</a></p>
+      <img border="0" src="diagram/programa.png" height="52" width="182" usemap="#programa.map"><map name="programa.map">
+         <area shape="rect" coords="49,17,133,49" href="#declaracao" title="declaracao"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#programa" title="programa" shape="rect">programa</a> ::= <a href="#declaracao" title="declaracao" shape="rect">declaracao</a>+</pre></div>
+         
+      </p>
+      
+      <p>no references</p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao">declaracao:</a></p>
+      <img border="0" src="diagram/declaracao.png" height="84" width="356" usemap="#declaracao.map"><map name="declaracao.map">
+         <area shape="rect" coords="49,49,187,81" href="#declaracao_variavel" title="declaracao_variavel">
+         <area shape="rect" coords="247,17,307,49" href="#funcao" title="funcao"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao" title="declaracao" shape="rect">declaracao</a>
+         ::= <a href="#declaracao_variavel" title="declaracao_variavel" shape="rect">declaracao_variavel</a>? <a href="#funcao" title="funcao" shape="rect">funcao</a>+</pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#programa" title="programa">programa</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_variavel">declaracao_variavel:</a></p>
+      <img border="0" src="diagram/declaracao_variavel.png" height="52" width="164" usemap="#declaracao_variavel.map"><map name="declaracao_variavel.map">
+         <area shape="rect" coords="49,17,115,49" href="#variavel" title="variavel"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_variavel" title="declaracao_variavel" shape="rect">declaracao_variavel</a>
+         ::= <a href="#variavel" title="variavel" shape="rect">variavel</a>+</pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#declaracao" title="declaracao">declaracao</a></li>
+            
+            <li><a href="#declaracao_composta" title="declaracao_composta">declaracao_composta</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="variavel">variavel:</a></p>
+      <img border="0" src="diagram/variavel.png" height="36" width="278" usemap="#variavel.map"><map name="variavel.map">
+         <area shape="rect" coords="29,1,71,33" href="#tipo" title="tipo">
+         <area shape="rect" coords="91,1,191,33" href="#DOISPONTOS" title="DOISPONTOS">
+         <area shape="rect" coords="211,1,249,33" href="#var" title="var"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#variavel" title="variavel" shape="rect">variavel</a> ::= <a href="#tipo" title="tipo" shape="rect">tipo</a> <a href="#DOISPONTOS" title="DOISPONTOS" shape="rect">DOISPONTOS</a> <a href="#var" title="var" shape="rect">var</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#declaracao_variavel" title="declaracao_variavel">declaracao_variavel</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="var">var:</a></p>
+      <img border="0" src="diagram/var.png" height="198" width="924" usemap="#var.map"><map name="var.map">
+         <area shape="rect" coords="29,1,61,33" href="#ID" title="ID">
+         <area shape="rect" coords="101,33,223,65" href="#ABRE_COLCHETE" title="ABRE_COLCHETE">
+         <area shape="rect" coords="243,33,311,65" href="#INTEIRO" title="INTEIRO">
+         <area shape="rect" coords="331,33,461,65" href="#FECHA_COLCHETE" title="FECHA_COLCHETE">
+         <area shape="rect" coords="501,65,623,97" href="#ABRE_COLCHETE" title="ABRE_COLCHETE">
+         <area shape="rect" coords="643,65,711,97" href="#INTEIRO" title="INTEIRO">
+         <area shape="rect" coords="731,65,861,97" href="#FECHA_COLCHETE" title="FECHA_COLCHETE">
+         <area shape="rect" coords="731,147,803,179" href="#VIRGULA" title="VIRGULA">
+         <area shape="rect" coords="823,147,855,179" href="#ID" title="ID"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#var" title="var" shape="rect">var</a>      ::= <a href="#ID" title="ID" shape="rect">ID</a> ( <a href="#ABRE_COLCHETE" title="ABRE_COLCHETE" shape="rect">ABRE_COLCHETE</a> <a href="#INTEIRO" title="INTEIRO" shape="rect">INTEIRO</a> <a href="#FECHA_COLCHETE" title="FECHA_COLCHETE" shape="rect">FECHA_COLCHETE</a> ( <a href="#ABRE_COLCHETE" title="ABRE_COLCHETE" shape="rect">ABRE_COLCHETE</a> <a href="#INTEIRO" title="INTEIRO" shape="rect">INTEIRO</a> <a href="#FECHA_COLCHETE" title="FECHA_COLCHETE" shape="rect">FECHA_COLCHETE</a> )? )? ( <a href="#VIRGULA" title="VIRGULA" shape="rect">VIRGULA</a> <a href="#ID" title="ID" shape="rect">ID</a> )*</pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#declaracao_atribuicao" title="declaracao_atribuicao">declaracao_atribuicao</a></li>
+            
+            <li><a href="#variavel" title="variavel">variavel</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="tipo">tipo:</a></p>
+      <img border="0" src="diagram/tipo.png" height="80" width="186" usemap="#tipo.map"><map name="tipo.map">
+         <area shape="rect" coords="49,1,117,33" href="#INTEIRO" title="INTEIRO">
+         <area shape="rect" coords="49,45,137,77" href="#FLUTUANTE" title="FLUTUANTE"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#tipo" title="tipo" shape="rect">tipo</a>     ::= <a href="#INTEIRO" title="INTEIRO" shape="rect">INTEIRO</a>
+           | <a href="#FLUTUANTE" title="FLUTUANTE" shape="rect">FLUTUANTE</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#funcao" title="funcao">funcao</a></li>
+            
+            <li><a href="#parametro" title="parametro">parametro</a></li>
+            
+            <li><a href="#variavel" title="variavel">variavel</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="funcao">funcao:</a></p>
+      <img border="0" src="diagram/funcao.png" height="68" width="910" usemap="#funcao.map"><map name="funcao.map">
+         <area shape="rect" coords="29,1,71,33" href="#tipo" title="tipo">
+         <area shape="rect" coords="91,1,123,33" href="#ID" title="ID">
+         <area shape="rect" coords="143,1,269,33" href="#ABREPARENTESES" title="ABREPARENTESES">
+         <area shape="rect" coords="289,1,451,33" href="#declaracao_parametros" title="declaracao_parametros">
+         <area shape="rect" coords="471,1,607,33" href="#FECHAPARENTESES" title="FECHAPARENTESES">
+         <area shape="rect" coords="647,33,799,65" href="#declaracao_composta" title="declaracao_composta">
+         <area shape="rect" coords="839,1,881,33" href="#FIM" title="FIM"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#funcao" title="funcao" shape="rect">funcao</a>   ::= <a href="#tipo" title="tipo" shape="rect">tipo</a> <a href="#ID" title="ID" shape="rect">ID</a> <a href="#ABREPARENTESES" title="ABREPARENTESES" shape="rect">ABREPARENTESES</a> <a href="#declaracao_parametros" title="declaracao_parametros" shape="rect">declaracao_parametros</a> <a href="#FECHAPARENTESES" title="FECHAPARENTESES" shape="rect">FECHAPARENTESES</a> <a href="#declaracao_composta" title="declaracao_composta" shape="rect">declaracao_composta</a>? <a href="#FIM" title="FIM" shape="rect">FIM</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#declaracao" title="declaracao">declaracao</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_parametros">declaracao_parametros:</a></p>
+      <img border="0" src="diagram/declaracao_parametros.png" height="124" width="220" usemap="#declaracao_parametros.map"><map name="declaracao_parametros.map">
+         <area shape="rect" coords="69,45,151,77" href="#parametro" title="parametro">
+         <area shape="rect" coords="69,1,141,33" href="#VIRGULA" title="VIRGULA">
+         <area shape="rect" coords="49,89,101,121" href="#vazio" title="vazio"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_parametros" title="declaracao_parametros" shape="rect">declaracao_parametros</a>
+         ::= <a href="#parametro" title="parametro" shape="rect">parametro</a> ( <a href="#VIRGULA" title="VIRGULA" shape="rect">VIRGULA</a> <a href="#parametro" title="parametro" shape="rect">parametro</a> )*
+           | <a href="#vazio" title="vazio" shape="rect">vazio</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#funcao" title="funcao">funcao</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="parametro">parametro:</a></p>
+      <img border="0" src="diagram/parametro.png" height="144" width="1152" usemap="#parametro.map"><map name="parametro.map">
+         <area shape="rect" coords="49,1,91,33" href="#tipo" title="tipo">
+         <area shape="rect" coords="111,1,211,33" href="#DOISPONTOS" title="DOISPONTOS">
+         <area shape="rect" coords="231,1,263,33" href="#ID" title="ID">
+         <area shape="rect" coords="303,33,425,65" href="#ABRE_COLCHETE" title="ABRE_COLCHETE">
+         <area shape="rect" coords="445,33,513,65" href="#INTEIRO" title="INTEIRO">
+         <area shape="rect" coords="533,33,663,65" href="#FECHA_COLCHETE" title="FECHA_COLCHETE">
+         <area shape="rect" coords="703,65,825,97" href="#ABRE_COLCHETE" title="ABRE_COLCHETE">
+         <area shape="rect" coords="845,65,913,97" href="#INTEIRO" title="INTEIRO">
+         <area shape="rect" coords="933,65,1063,97" href="#FECHA_COLCHETE" title="FECHA_COLCHETE">
+         <area shape="rect" coords="49,109,101,141" href="#vazio" title="vazio"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#parametro" title="parametro" shape="rect">parametro</a>
+         ::= <a href="#tipo" title="tipo" shape="rect">tipo</a> <a href="#DOISPONTOS" title="DOISPONTOS" shape="rect">DOISPONTOS</a> <a href="#ID" title="ID" shape="rect">ID</a> ( <a href="#ABRE_COLCHETE" title="ABRE_COLCHETE" shape="rect">ABRE_COLCHETE</a> <a href="#INTEIRO" title="INTEIRO" shape="rect">INTEIRO</a> <a href="#FECHA_COLCHETE" title="FECHA_COLCHETE" shape="rect">FECHA_COLCHETE</a> ( <a href="#ABRE_COLCHETE" title="ABRE_COLCHETE" shape="rect">ABRE_COLCHETE</a> <a href="#INTEIRO" title="INTEIRO" shape="rect">INTEIRO</a> <a href="#FECHA_COLCHETE" title="FECHA_COLCHETE" shape="rect">FECHA_COLCHETE</a> )? )?
+           | <a href="#vazio" title="vazio" shape="rect">vazio</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#declaracao_parametros" title="declaracao_parametros">declaracao_parametros</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_composta">declaracao_composta:</a></p>
+      <img border="0" src="diagram/declaracao_composta.png" height="114" width="348" usemap="#declaracao_composta.map"><map name="declaracao_composta.map">
+         <area shape="rect" coords="49,35,101,67" href="#vazio" title="vazio">
+         <area shape="rect" coords="141,1,279,33" href="#declaracao_variavel" title="declaracao_variavel">
+         <area shape="rect" coords="49,79,167,111" href="#lista_statements" title="lista_statements"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_composta" title="declaracao_composta" shape="rect">declaracao_composta</a>
+         ::= <a href="#vazio" title="vazio" shape="rect">vazio</a> <a href="#declaracao_variavel" title="declaracao_variavel" shape="rect">declaracao_variavel</a>*
+           | <a href="#lista_statements" title="lista_statements" shape="rect">lista_statements</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#funcao" title="funcao">funcao</a></li>
+            
+            <li><a href="#statement" title="statement">statement</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="lista_statements">lista_statements:</a></p>
+      <img border="0" src="diagram/lista_statements.png" height="70" width="252" usemap="#lista_statements.map"><map name="lista_statements.map">
+         <area shape="rect" coords="29,35,81,67" href="#vazio" title="vazio">
+         <area shape="rect" coords="121,1,203,33" href="#statement" title="statement"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#lista_statements" title="lista_statements" shape="rect">lista_statements</a>
+         ::= <a href="#vazio" title="vazio" shape="rect">vazio</a> <a href="#statement" title="statement" shape="rect">statement</a>*</pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#declaracao_composta" title="declaracao_composta">declaracao_composta</a></li>
+            
+            <li><a href="#declaracao_iteracao" title="declaracao_iteracao">declaracao_iteracao</a></li>
+            
+            <li><a href="#declaracao_selecao" title="declaracao_selecao">declaracao_selecao</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="statement">statement:</a></p>
+      <img border="0" src="diagram/statement.png" height="388" width="250" usemap="#statement.map"><map name="statement.map">
+         <area shape="rect" coords="49,1,131,33" href="#expressao" title="expressao">
+         <area shape="rect" coords="49,45,201,77" href="#declaracao_composta" title="declaracao_composta">
+         <area shape="rect" coords="49,89,185,121" href="#declaracao_selecao" title="declaracao_selecao">
+         <area shape="rect" coords="49,133,189,165" href="#declaracao_iteracao" title="declaracao_iteracao">
+         <area shape="rect" coords="49,177,199,209" href="#declaracao_atribuicao" title="declaracao_atribuicao">
+         <area shape="rect" coords="49,221,177,253" href="#declaracao_leitura" title="declaracao_leitura">
+         <area shape="rect" coords="49,265,179,297" href="#declaracao_escrita" title="declaracao_escrita">
+         <area shape="rect" coords="49,309,185,341" href="#declaracao_retorno" title="declaracao_retorno">
+         <area shape="rect" coords="49,353,93,385" href="#erro" title="erro"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#statement" title="statement" shape="rect">statement</a>
+         ::= <a href="#expressao" title="expressao" shape="rect">expressao</a>
+           | <a href="#declaracao_composta" title="declaracao_composta" shape="rect">declaracao_composta</a>
+           | <a href="#declaracao_selecao" title="declaracao_selecao" shape="rect">declaracao_selecao</a>
+           | <a href="#declaracao_iteracao" title="declaracao_iteracao" shape="rect">declaracao_iteracao</a>
+           | <a href="#declaracao_atribuicao" title="declaracao_atribuicao" shape="rect">declaracao_atribuicao</a>
+           | <a href="#declaracao_leitura" title="declaracao_leitura" shape="rect">declaracao_leitura</a>
+           | <a href="#declaracao_escrita" title="declaracao_escrita" shape="rect">declaracao_escrita</a>
+           | <a href="#declaracao_retorno" title="declaracao_retorno" shape="rect">declaracao_retorno</a>
+           | <a href="#erro" title="erro" shape="rect">erro</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#lista_statements" title="lista_statements">lista_statements</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_selecao">declaracao_selecao:</a></p>
+      <img border="0" src="diagram/declaracao_selecao.png" height="68" width="734" usemap="#declaracao_selecao.map"><map name="declaracao_selecao.map">
+         <area shape="rect" coords="29,1,63,33" href="#SE" title="SE">
+         <area shape="rect" coords="83,1,165,33" href="#expressao" title="expressao">
+         <area shape="rect" coords="185,1,245,33" href="#ENTAO" title="ENTAO">
+         <area shape="rect" coords="265,1,383,33" href="#lista_statements" title="lista_statements">
+         <area shape="rect" coords="423,33,485,65" href="#SENAO" title="SENAO">
+         <area shape="rect" coords="505,33,623,65" href="#lista_statements" title="lista_statements">
+         <area shape="rect" coords="663,1,705,33" href="#FIM" title="FIM"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_selecao" title="declaracao_selecao" shape="rect">declaracao_selecao</a>
+         ::= <a href="#SE" title="SE" shape="rect">SE</a> <a href="#expressao" title="expressao" shape="rect">expressao</a> <a href="#ENTAO" title="ENTAO" shape="rect">ENTAO</a> <a href="#lista_statements" title="lista_statements" shape="rect">lista_statements</a> ( <a href="#SENAO" title="SENAO" shape="rect">SENAO</a> <a href="#lista_statements" title="lista_statements" shape="rect">lista_statements</a> )? <a href="#FIM" title="FIM" shape="rect">FIM</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#statement" title="statement">statement</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_iteracao">declaracao_iteracao:</a></p>
+      <img border="0" src="diagram/declaracao_iteracao.png" height="36" width="420" usemap="#declaracao_iteracao.map"><map name="declaracao_iteracao.map">
+         <area shape="rect" coords="29,1,89,33" href="#REPITA" title="REPITA">
+         <area shape="rect" coords="109,1,227,33" href="#lista_statements" title="lista_statements">
+         <area shape="rect" coords="247,1,289,33" href="#ATE" title="ATE">
+         <area shape="rect" coords="309,1,391,33" href="#expressao" title="expressao"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_iteracao" title="declaracao_iteracao" shape="rect">declaracao_iteracao</a>
+         ::= <a href="#REPITA" title="REPITA" shape="rect">REPITA</a> <a href="#lista_statements" title="lista_statements" shape="rect">lista_statements</a> <a href="#ATE" title="ATE" shape="rect">ATE</a> <a href="#expressao" title="expressao" shape="rect">expressao</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#statement" title="statement">statement</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_atribuicao">declaracao_atribuicao:</a></p>
+      <img border="0" src="diagram/declaracao_atribuicao.png" height="36" width="312" usemap="#declaracao_atribuicao.map"><map name="declaracao_atribuicao.map">
+         <area shape="rect" coords="29,1,67,33" href="#var" title="var">
+         <area shape="rect" coords="87,1,181,33" href="#ATRIBUICAO" title="ATRIBUICAO">
+         <area shape="rect" coords="201,1,283,33" href="#expressao" title="expressao"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_atribuicao" title="declaracao_atribuicao" shape="rect">declaracao_atribuicao</a>
+         ::= <a href="#var" title="var" shape="rect">var</a> <a href="#ATRIBUICAO" title="ATRIBUICAO" shape="rect">ATRIBUICAO</a> <a href="#expressao" title="expressao" shape="rect">expressao</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#statement" title="statement">statement</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_leitura">declaracao_leitura:</a></p>
+      <img border="0" src="diagram/declaracao_leitura.png" height="36" width="458" usemap="#declaracao_leitura.map"><map name="declaracao_leitura.map">
+         <area shape="rect" coords="29,1,75,33" href="#LEIA" title="LEIA">
+         <area shape="rect" coords="95,1,221,33" href="#ABREPARENTESES" title="ABREPARENTESES">
+         <area shape="rect" coords="241,1,273,33" href="#ID" title="ID">
+         <area shape="rect" coords="293,1,429,33" href="#FECHAPARENTESES" title="FECHAPARENTESES"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_leitura" title="declaracao_leitura" shape="rect">declaracao_leitura</a>
+         ::= <a href="#LEIA" title="LEIA" shape="rect">LEIA</a> <a href="#ABREPARENTESES" title="ABREPARENTESES" shape="rect">ABREPARENTESES</a> <a href="#ID" title="ID" shape="rect">ID</a> <a href="#FECHAPARENTESES" title="FECHAPARENTESES" shape="rect">FECHAPARENTESES</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#statement" title="statement">statement</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_escrita">declaracao_escrita:</a></p>
+      <img border="0" src="diagram/declaracao_escrita.png" height="36" width="536" usemap="#declaracao_escrita.map"><map name="declaracao_escrita.map">
+         <area shape="rect" coords="29,1,103,33" href="#ESCREVA" title="ESCREVA">
+         <area shape="rect" coords="123,1,249,33" href="#ABREPARENTESES" title="ABREPARENTESES">
+         <area shape="rect" coords="269,1,351,33" href="#expressao" title="expressao">
+         <area shape="rect" coords="371,1,507,33" href="#FECHAPARENTESES" title="FECHAPARENTESES"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_escrita" title="declaracao_escrita" shape="rect">declaracao_escrita</a>
+         ::= <a href="#ESCREVA" title="ESCREVA" shape="rect">ESCREVA</a> <a href="#ABREPARENTESES" title="ABREPARENTESES" shape="rect">ABREPARENTESES</a> <a href="#expressao" title="expressao" shape="rect">expressao</a> <a href="#FECHAPARENTESES" title="FECHAPARENTESES" shape="rect">FECHAPARENTESES</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#statement" title="statement">statement</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="declaracao_retorno">declaracao_retorno:</a></p>
+      <img border="0" src="diagram/declaracao_retorno.png" height="36" width="538" usemap="#declaracao_retorno.map"><map name="declaracao_retorno.map">
+         <area shape="rect" coords="29,1,105,33" href="#RETORNA" title="RETORNA">
+         <area shape="rect" coords="125,1,251,33" href="#ABREPARENTESES" title="ABREPARENTESES">
+         <area shape="rect" coords="271,1,353,33" href="#expressao" title="expressao">
+         <area shape="rect" coords="373,1,509,33" href="#FECHAPARENTESES" title="FECHAPARENTESES"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#declaracao_retorno" title="declaracao_retorno" shape="rect">declaracao_retorno</a>
+         ::= <a href="#RETORNA" title="RETORNA" shape="rect">RETORNA</a> <a href="#ABREPARENTESES" title="ABREPARENTESES" shape="rect">ABREPARENTESES</a> <a href="#expressao" title="expressao" shape="rect">expressao</a> <a href="#FECHAPARENTESES" title="FECHAPARENTESES" shape="rect">FECHAPARENTESES</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#statement" title="statement">statement</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="expressao">expressao:</a></p>
+      <img border="0" src="diagram/expressao.png" height="80" width="232" usemap="#expressao.map"><map name="expressao.map">
+         <area shape="rect" coords="49,1,183,33" href="#expressao_simples" title="expressao_simples">
+         <area shape="rect" coords="49,45,171,77" href="#chamada_funcao" title="chamada_funcao"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#expressao" title="expressao" shape="rect">expressao</a>
+         ::= <a href="#expressao_simples" title="expressao_simples" shape="rect">expressao_simples</a>
+           | <a href="#chamada_funcao" title="chamada_funcao" shape="rect">chamada_funcao</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#chamadafuncao" title="chamadafuncao">chamadafuncao</a></li>
+            
+            <li><a href="#declaracao_atribuicao" title="declaracao_atribuicao">declaracao_atribuicao</a></li>
+            
+            <li><a href="#declaracao_escrita" title="declaracao_escrita">declaracao_escrita</a></li>
+            
+            <li><a href="#declaracao_iteracao" title="declaracao_iteracao">declaracao_iteracao</a></li>
+            
+            <li><a href="#declaracao_retorno" title="declaracao_retorno">declaracao_retorno</a></li>
+            
+            <li><a href="#declaracao_selecao" title="declaracao_selecao">declaracao_selecao</a></li>
+            
+            <li><a href="#fator" title="fator">fator</a></li>
+            
+            <li><a href="#statement" title="statement">statement</a></li>
+            
+            <li><a href="#unario" title="unario">unario</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="expressao_simples">expressao_simples:</a></p>
+      <img border="0" src="diagram/expressao_simples.png" height="68" width="596" usemap="#expressao_simples.map"><map name="expressao_simples.map">
+         <area shape="rect" coords="49,33,105,65" href="#unario" title="unario">
+         <area shape="rect" coords="125,33,247,65" href="#expressao_soma" title="expressao_soma">
+         <area shape="rect" coords="267,33,405,65" href="#operador_relacional" title="operador_relacional">
+         <area shape="rect" coords="445,1,567,33" href="#expressao_soma" title="expressao_soma"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#expressao_simples" title="expressao_simples" shape="rect">expressao_simples</a>
+         ::= ( <a href="#unario" title="unario" shape="rect">unario</a> <a href="#expressao_soma" title="expressao_soma" shape="rect">expressao_soma</a> <a href="#operador_relacional" title="operador_relacional" shape="rect">operador_relacional</a> )? <a href="#expressao_soma" title="expressao_soma" shape="rect">expressao_soma</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#expressao" title="expressao">expressao</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="unario">unario:</a></p>
+      <img border="0" src="diagram/unario.png" height="36" width="276" usemap="#unario.map"><map name="unario.map">
+         <area shape="rect" coords="29,1,145,33" href="#operador_soma" title="operador_soma">
+         <area shape="rect" coords="165,1,247,33" href="#expressao" title="expressao"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#unario" title="unario" shape="rect">unario</a>   ::= <a href="#operador_soma" title="operador_soma" shape="rect">operador_soma</a> <a href="#expressao" title="expressao" shape="rect">expressao</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#expressao_simples" title="expressao_simples">expressao_simples</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="operador_relacional">operador_relacional:</a></p>
+      <img border="0" src="diagram/operador_relacional.png" height="256" width="206" usemap="#operador_relacional.map"><map name="operador_relacional.map">
+         <area shape="rect" coords="49,1,113,33" href="#MENOR" title="MENOR">
+         <area shape="rect" coords="49,45,109,77" href="#MAIOR" title="MAIOR">
+         <area shape="rect" coords="49,89,105,121" href="#IGUAL" title="IGUAL">
+         <area shape="rect" coords="49,133,133,165" href="#DIFERENTE" title="DIFERENTE">
+         <area shape="rect" coords="49,177,157,209" href="#MENOR_IGUAL" title="MENOR_IGUAL">
+         <area shape="rect" coords="49,221,153,253" href="#MAIOR_IGUAL" title="MAIOR_IGUAL"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#operador_relacional" title="operador_relacional" shape="rect">operador_relacional</a>
+         ::= <a href="#MENOR" title="MENOR" shape="rect">MENOR</a>
+           | <a href="#MAIOR" title="MAIOR" shape="rect">MAIOR</a>
+           | <a href="#IGUAL" title="IGUAL" shape="rect">IGUAL</a>
+           | <a href="#DIFERENTE" title="DIFERENTE" shape="rect">DIFERENTE</a>
+           | <a href="#MENOR_IGUAL" title="MENOR_IGUAL" shape="rect">MENOR_IGUAL</a>
+           | <a href="#MAIOR_IGUAL" title="MAIOR_IGUAL" shape="rect">MAIOR_IGUAL</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#expressao_simples" title="expressao_simples">expressao_simples</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="expressao_soma">expressao_soma:</a></p>
+      <img border="0" src="diagram/expressao_soma.png" height="80" width="214" usemap="#expressao_soma.map"><map name="expressao_soma.map">
+         <area shape="rect" coords="49,45,105,77" href="#termo" title="termo">
+         <area shape="rect" coords="49,1,165,33" href="#operador_soma" title="operador_soma"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#expressao_soma" title="expressao_soma" shape="rect">expressao_soma</a>
+         ::= <a href="#termo" title="termo" shape="rect">termo</a> ( <a href="#operador_soma" title="operador_soma" shape="rect">operador_soma</a> <a href="#termo" title="termo" shape="rect">termo</a> )*</pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#expressao_simples" title="expressao_simples">expressao_simples</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="operador_soma">operador_soma:</a></p>
+      <img border="0" src="diagram/operador_soma.png" height="80" width="192" usemap="#operador_soma.map"><map name="operador_soma.map">
+         <area shape="rect" coords="49,1,115,33" href="#ADICAO" title="ADICAO">
+         <area shape="rect" coords="49,45,143,77" href="#SUBTRACAO" title="SUBTRACAO"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#operador_soma" title="operador_soma" shape="rect">operador_soma</a>
+         ::= <a href="#ADICAO" title="ADICAO" shape="rect">ADICAO</a>
+           | <a href="#SUBTRACAO" title="SUBTRACAO" shape="rect">SUBTRACAO</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#expressao_soma" title="expressao_soma">expressao_soma</a></li>
+            
+            <li><a href="#unario" title="unario">unario</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="termo">termo:</a></p>
+      <img border="0" src="diagram/termo.png" height="80" width="256" usemap="#termo.map"><map name="termo.map">
+         <area shape="rect" coords="49,45,97,77" href="#fator" title="fator">
+         <area shape="rect" coords="49,1,207,33" href="#operador_multiplicacao" title="operador_multiplicacao"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#termo" title="termo" shape="rect">termo</a>    ::= <a href="#fator" title="fator" shape="rect">fator</a> ( <a href="#operador_multiplicacao" title="operador_multiplicacao" shape="rect">operador_multiplicacao</a> <a href="#fator" title="fator" shape="rect">fator</a> )*</pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#expressao_soma" title="expressao_soma">expressao_soma</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="operador_multiplicacao">operador_multiplicacao:</a></p>
+      <img border="0" src="diagram/operador_multiplicacao.png" height="80" width="214" usemap="#operador_multiplicacao.map"><map name="operador_multiplicacao.map">
+         <area shape="rect" coords="49,1,165,33" href="#MULTIPLICACAO" title="MULTIPLICACAO">
+         <area shape="rect" coords="49,45,119,77" href="#DIVISAO" title="DIVISAO"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#operador_multiplicacao" title="operador_multiplicacao" shape="rect">operador_multiplicacao</a>
+         ::= <a href="#MULTIPLICACAO" title="MULTIPLICACAO" shape="rect">MULTIPLICACAO</a>
+           | <a href="#DIVISAO" title="DIVISAO" shape="rect">DIVISAO</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#termo" title="termo">termo</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="fator">fator:</a></p>
+      <img border="0" src="diagram/fator.png" height="124" width="482" usemap="#fator.map"><map name="fator.map">
+         <area shape="rect" coords="49,1,175,33" href="#ABREPARENTESES" title="ABREPARENTESES">
+         <area shape="rect" coords="195,1,277,33" href="#expressao" title="expressao">
+         <area shape="rect" coords="297,1,433,33" href="#FECHAPARENTESES" title="FECHAPARENTESES">
+         <area shape="rect" coords="49,45,115,77" href="#numero" title="numero">
+         <area shape="rect" coords="49,89,81,121" href="#ID" title="ID"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#fator" title="fator" shape="rect">fator</a>    ::= <a href="#ABREPARENTESES" title="ABREPARENTESES" shape="rect">ABREPARENTESES</a> <a href="#expressao" title="expressao" shape="rect">expressao</a> <a href="#FECHAPARENTESES" title="FECHAPARENTESES" shape="rect">FECHAPARENTESES</a>
+           | <a href="#numero" title="numero" shape="rect">numero</a>
+           | <a href="#ID" title="ID" shape="rect">ID</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#termo" title="termo">termo</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="numero">numero:</a></p>
+      <img border="0" src="diagram/numero.png" height="124" width="288" usemap="#numero.map"><map name="numero.map">
+         <area shape="rect" coords="49,1,153,33" href="#NUM_INTEIRO" title="NUM_INTEIRO">
+         <area shape="rect" coords="49,45,223,77" href="#NUM_PONTO_FLUTUANTE" title="NUM_PONTO_FLUTUANTE">
+         <area shape="rect" coords="49,89,239,121" href="#NUM_NOTACAO_CIENTIFICA" title="NUM_NOTACAO_CIENTIFICA"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#numero" title="numero" shape="rect">numero</a>   ::= <a href="#NUM_INTEIRO" title="NUM_INTEIRO" shape="rect">NUM_INTEIRO</a>
+           | <a href="#NUM_PONTO_FLUTUANTE" title="NUM_PONTO_FLUTUANTE" shape="rect">NUM_PONTO_FLUTUANTE</a>
+           | <a href="#NUM_NOTACAO_CIENTIFICA" title="NUM_NOTACAO_CIENTIFICA" shape="rect">NUM_NOTACAO_CIENTIFICA</a></pre></div>
+         
+      </p>
+      
+      <p>referenced by:
+         
+         <ul>
+            
+            <li><a href="#fator" title="fator">fator</a></li>
+            
+         </ul>
+         
+      </p><br><p style="font-size: 14px; font-weight:bold"><a name="chamadafuncao">chamadafuncao:</a></p>
+      <img border="0" src="diagram/chamadafuncao.png" height="96" width="808" usemap="#chamadafuncao.map"><map name="chamadafuncao.map">
+         <area shape="rect" coords="29,17,61,49" href="#ID" title="ID">
+         <area shape="rect" coords="81,17,207,49" href="#ABREPARENTESES" title="ABREPARENTESES">
+         <area shape="rect" coords="247,17,329,49" href="#expressao" title="expressao">
+         <area shape="rect" coords="247,61,299,93" href="#vazio" title="vazio">
+         <area shape="rect" coords="409,17,481,49" href="#VIRGULA" title="VIRGULA">
+         <area shape="rect" coords="501,17,583,49" href="#expressao" title="expressao">
+         <area shape="rect" coords="643,17,779,49" href="#FECHAPARENTESES" title="FECHAPARENTESES"></map>
+      
+      <p>
+         
+         <div class="ebnf"><pre><a href="#chamadafuncao" title="chamadafuncao" shape="rect">chamadafuncao</a>
+         ::= <a href="#ID" title="ID" shape="rect">ID</a> <a href="#ABREPARENTESES" title="ABREPARENTESES" shape="rect">ABREPARENTESES</a> ( <a href="#expressao" title="expressao" shape="rect">expressao</a> | <a href="#vazio" title="vazio" shape="rect">vazio</a> ) ( <a href="#VIRGULA" title="VIRGULA" shape="rect">VIRGULA</a> <a href="#expressao" title="expressao" shape="rect">expressao</a> )* <a href="#FECHAPARENTESES" title="FECHAPARENTESES" shape="rect">FECHAPARENTESES</a></pre></div>
+         
+      </p>
+      
+      <p>no references</p><br><hr>
+      
+      <p>
+         
+         <table class="signature" border="0">
+            
+            <tr>
+               
+               <td style="width: 100%">&nbsp;</td>
+               
+               <td valign="top">
+                  
+                  <nobr class="signature">... generated by <a name="Railroad-Diagram-Generator" class="signature" title="http://www.bottlecaps.de/rr/ui" href="http://www.bottlecaps.de/rr/ui" target="_blank">Railroad Diagram Generator</a></nobr>
+                  
+               </td>
+               
+               <td><a name="Railroad-Diagram-Generator" title="http://www.bottlecaps.de/rr/ui" href="http://www.bottlecaps.de/rr/ui" target="_blank">
+                     <img border="0" src="diagram/Railroad-Diagram-Generator.png" height="16" width="16"></a></td>
+               
+            </tr>
+            
+         </table>
+         
+      </p>
+      
+   </body>
+</html>
