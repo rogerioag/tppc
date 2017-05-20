@@ -1,121 +1,109 @@
+/*
+  Scanner of tppc
+*/
 %{
-// #include "parser.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h> // toupper
+
+// #include "syntax-tree.h"
+#include "parser.tab.h"
 
 void yyerror(char *);
+extern int yy_flex_debug;
 
-/* Token type, será gerado depois pelo yacc. */
-#ifndef YYTOKENTYPE
-# define YYTOKENTYPE
-enum yytokentype
-{
-    END_OF_FILE = 258,
-    T_NUM_INTEIRO = 259,
-	T_NUM_PONTO_FLUTUANTE = 260,
-    T_NUM_NOTACAO_CIENTIFICA = 261,
-    T_ID = 262,
-    T_PR = 263,
-    T_IGUAL = 264,
-    T_DOIS_PONTOS = 265,
-    T_ATRIBUICAO = 266,
-    T_MENOR = 267,
-    T_MENOR_IGUAL = 268,
-    T_MAIOR = 269,
-    T_MAIOR_IGUAL = 270,
-    T_DIFERENTE = 271,
-    T_ABRE_PARENTESES = 272, 
-    T_FECHA_PARENTESES = 273,
-    T_ABRE_COLCHETE = 274,
-    T_FECHA_COLCHETE = 275,
-    T_ABRE_CHAVE = 276,
-    T_FECHA_CHAVE = 277,
-    T_VIRGULA = 278, 
-    T_MAIS = 279, 
-    T_MENOS = 280,
-    T_MULTIPLICACAO = 281,
-    T_DIVISAO = 282,
-    COMENTARIO_NAO_FINALIZADO = 283
-};
-#endif
+// extern char * _strupr(char *);
 
-int yylval;
+char *strlwr(char *);
+
+char *strupr(char *);
+
+int resWord(char *);
+
+int symLookup(char *);
 
 /* Número da linha. */
 int line_num = 1;
 %}
- 
+
 /* Definições */
-DIGITO			[0-9]+
-LETRA			[a-zA-Z]+
-ID 				{LETRA}({LETRA}|{DIGITO})*
-NUM_NATURAL		{DIGITO}+
-NUM_INTEIRO		([-+]?{NUM_NATURAL})
-NUM_PONTO_FLUTUANTE	({NUM_INTEIRO}"."{NUM_INTEIRO})
+DIGITO          [0-9]+
+LETRA           [a-zA-Z]+
+ID              {LETRA}({LETRA}|{DIGITO})*
+NUM_NATURAL     {DIGITO}+
+NUM_INTEIRO     ([-+]?{NUM_NATURAL})
+
+NUM_PONTO_FLUTUANTE ({NUM_INTEIRO}"."{NUM_INTEIRO})
 
 NUM_NOTACAO_CIENTIFICA ({NUM_PONTO_FLUTUANTE}[eE]{NUM_INTEIRO})
 
-PALAVRA_RESERVADA	(leia|escreva|principal|se|então|senão|repita|até|fim|retorna|inteiro|flutuante)
-
 ESPACO_EM_BRANCO [ \n\r\t]+
 
-%x 		COMENTARIO
+%x      COMENTARIO
 
 %option case-sensitive
  
 %% /* Regras com padrões e ações. */
 
-{PALAVRA_RESERVADA}	{
-	printf("<PR, %s>\n", yytext);
-	return T_PR; 
+{ID}    {   
+    // ECHO;
+    // yylval = ID;
+    // printf("%d: %s -> %d", line_num, yytext, yylval);
+    // yylval.sIndex = *yytext - 'a';
+    printf("<ID, %s>\n", yytext);
+    // yylval.stringValue = (char*)realloc(v, yyleng *sizeof(char));
+    // strcpy(yylval.stringValue,yytext);
+    // return ID;
+    int i;
+    if((i = isPalavraReservada(yytext)) != 0)
+        return i;
+    yylval.id = simboloLookup(yytext);
+    return ID;
 }
 
-{ID}	{   
-	// ECHO;
-	// yylval = T_ID;
-	// printf("%d: %s -> %d", line_num, yytext, yylval); 
-	printf("<ID, %s>\n", yytext);
-	return T_ID;
+"="             { printf("<SB, %s>\n", yytext); return IGUAL; }
+":"             { printf("<SB, %s>\n", yytext); return DOIS_PONTOS; }
+":="            { printf("<SB, %s>\n", yytext); return ATRIBUICAO; }
+"<"             { printf("<SB, %s>\n", yytext); return MENOR; }
+"<="            { printf("<SB, %s>\n", yytext); return MENOR_IGUAL; }
+">"             { printf("<SB, %s>\n", yytext); return MAIOR; }
+">="            { printf("<SB, %s>\n", yytext); return MAIOR_IGUAL; }
+"<>"            { printf("<SB, %s>\n", yytext); return DIFERENTE; }
+"("             { printf("<SB, %s>\n", yytext); return ABRE_PARENTESES; }
+")"             { printf("<SB, %s>\n", yytext); return FECHA_PARENTESES; }
+"["             { printf("<SB, %s>\n", yytext); return ABRE_COLCHETE; }
+"]"             { printf("<SB, %s>\n", yytext); return FECHA_COLCHETE; }
+","             { printf("<SB, %s>\n", yytext); return VIRGULA; }
+"+"             { printf("<SB, %s>\n", yytext); return MAIS; }
+"-"             { printf("<SB, %s>\n", yytext); return MENOS; }
+"*"             { printf("<SB, %s>\n", yytext); return MULTIPLICACAO; }
+"/"             { printf("<SB, %s>\n", yytext); return DIVISAO; }
+
+{NUM_INTEIRO}   {
+    printf("<NUM, %s>\n", yytext);
+    // yylval.intValue = atoi(yytext);
+    return NUM_INTEIRO;
 }
 
-"="             { printf("<SB, %s>\n", yytext); return T_IGUAL; }
-":"             { printf("<SB, %s>\n", yytext); return T_DOIS_PONTOS; }
-":="            { printf("<SB, %s>\n", yytext); return T_ATRIBUICAO; }
-"<"             { printf("<SB, %s>\n", yytext); return T_MENOR; }
-"<="            { printf("<SB, %s>\n", yytext); return T_MENOR_IGUAL; }
-">"             { printf("<SB, %s>\n", yytext); return T_MAIOR; }
-">="            { printf("<SB, %s>\n", yytext); return T_MAIOR_IGUAL; }
-"<>"            { printf("<SB, %s>\n", yytext); return T_DIFERENTE; }
-"("             { printf("<SB, %s>\n", yytext); return T_ABRE_PARENTESES; }
-")"             { printf("<SB, %s>\n", yytext); return T_FECHA_PARENTESES; }
-"["             { printf("<SB, %s>\n", yytext); return T_ABRE_COLCHETE; }
-"]"             { printf("<SB, %s>\n", yytext); return T_FECHA_COLCHETE; }
-","             { printf("<SB, %s>\n", yytext); return T_VIRGULA; }
-"+"             { printf("<SB, %s>\n", yytext); return T_MAIS; }
-"-"             { printf("<SB, %s>\n", yytext); return T_MENOS; }
-"*"             { printf("<SB, %s>\n", yytext); return T_MULTIPLICACAO; }
-"/"             { printf("<SB, %s>\n", yytext); return T_DIVISAO; }
-
-{NUM_INTEIRO}	{
-	printf("<NUM, %s>\n", yytext);
-	return T_NUM_INTEIRO;
-}
-
-{NUM_PONTO_FLUTUANTE}	{
-	printf("<NUM, %s>\n", yytext);
-	return T_NUM_PONTO_FLUTUANTE;
+{NUM_PONTO_FLUTUANTE}   {
+    printf("<NUM, %s>\n", yytext);
+    // yylval.floatValue = atof(yytext);
+    return NUM_PONTO_FLUTUANTE;
 }
 
 {NUM_NOTACAO_CIENTIFICA}    {
     printf("<NUM, %s>\n", yytext);
-    return T_NUM_NOTACAO_CIENTIFICA;
+    return NUM_NOTACAO_CIENTIFICA;
 }
 
 {ESPACO_EM_BRANCO} {
-	/* Não faz nada, Consome. */
+    /* Não faz nada, Consome. */
 }
 
 
-\{(.*?)\}	{
-	/*Comentário, ignorado. */
+\{(.*?)\}   {
+    /*Comentário, ignorado. */
 }
 
 "{" { BEGIN(COMENTARIO); }
@@ -127,23 +115,57 @@ ESPACO_EM_BRANCO [ \n\r\t]+
 
 <<EOF>>     return END_OF_FILE;
 
+.		/* anything else is an error */
+		yyerror("Caracter Inválido");
 
 %% /* Código do Usuário */
 /* A função yywrap */
 int yywrap(void){
-	return 1;
+    return 1;
 }
 
-extern int yy_flex_debug;
-int main(int argc, char *argv[]){
-	yyin = fopen(argv[1], "r");
-	int token = 0;
-	yy_flex_debug = 1;
-	while((token = yylex()) != END_OF_FILE){
-		// printf("Token: %d\n", token);
-	}
-	
-	fclose(yyin);
+char *strlwr(char *str)
+{
+  unsigned char *p = (unsigned char *)str;
 
-	return 0;
+  while (*p) {
+     *p = tolower((unsigned char)*p);
+      p++;
+  }
+
+  return str;
 }
+
+char *strupr(char *str)
+{
+  unsigned char *p = (unsigned char *)str;
+
+  while (*p) {
+     *p = toupper((unsigned char)*p);
+      p++;
+  }
+
+  return str;
+}
+
+int resWord(char *lexema){
+    return 272;
+}
+
+int symLookup(char *lexema){
+    return 1000;
+}
+
+
+/*int main(int argc, char *argv[]){
+    yyin = fopen(argv[1], "r");
+    int token = 0;
+    yy_flex_debug = 1;
+    while((token = yylex()) != END_OF_FILE){
+        // printf("Token: %d\n", token);
+    }
+    
+    fclose(yyin);
+
+    return 0;
+}*/
